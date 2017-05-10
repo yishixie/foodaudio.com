@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>food.audio</title>
+  <link href="https://fonts.googleapis.com/css?family=Amiko" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+  <!-- bootstrap progress bar -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+ <div class="header"> <a href="index.html">
+    <a href=#> <img src="data/logo.png"  width="260px;"></a>
+  </div>
+
+<div class="page2-content">
+  <div class="page1-border">
+    <p class="page1-title">Your Flavor Profile:</p>
+    <!-- sweet -->
+    <div class="progress">
+      <div class="progress-bar" id="progress-bar-custom1"  role="progressbar">
+        <p id="progress-bar-description1"></p>
+      </div>
+    </div>
+
+    <!-- sour -->
+    <div class="progress">
+      <div class="progress-bar" id="progress-bar-custom2" role="progressbar" >
+        <p id="progress-bar-description2"></p>
+      </div>
+    </div>
+
+    <!-- bitter -->
+    <div class="progress">
+      <div class="progress-bar" id="progress-bar-custom3" role="progressbar" >
+        <p id="progress-bar-description3"></p>
+      </div>
+    </div>
+
+    <!-- salty -->
+    <div class="progress">
+      <div class="progress-bar" id="progress-bar-custom4" role="progressbar">
+        <p id="progress-bar-description4"></p>
+      </div>
+    </div>
+    <!-- spicy -->
+    <div class="progress">
+      <div class="progress-bar" id="progress-bar-custom5" role="progressbar">
+        <p id="progress-bar-description5"></p>
+      </div>
+    </div>
+
+    <!--  p taste result  <p id="flavor-profile-page1"></p> -->
+
+    <div class="page1-ingredient">
+      <p class="page1-title">Your Ingredients:</p>
+      <p id="page1-ingredient-list"></p>
+      <button class="page1-ingredient-button" onclick="copyToClipboard('#page1-ingredient-list')">copy</button>
+    </div>
+
+
+
+
+    <!-- search recipe -->
+    <div class="page1-search">
+      <p class="page1-title">Search Recipes Based On These Ingredients:</p>
+
+      <gcse:search class="page1-search-google"></gcse:search>
+    </div>
+  </div>
+
+
+
+  <div class="page2-border">
+   <div class="page2-video">
+     <p class="page2-title">How Does The Tanscoding Work?</p>
+     <iframe src="https://player.vimeo.com/video/215017976?title=0&byline=0&portrait=0" width="99%" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<!--      <video width="90%" controls>
+  <source src="data/transcode.MOV" type="video/mp4">
+</video> -->
+     <!-- <img src="data/video.png"  > -->
+   </div>
+
+   <div class="page2-journal">
+     <p class="page2-title">About The Human Transcoding Machine: </p>
+     <a href="songs-translated-to-food.html" target="_blank"><img src="data/agent.jpg"  width="90%">
+     </a>
+     <p class="page2-journal-descrip"> Contact Yishi (yishixie4[at]gmail[dot]com) if you have a dream plate of music in your head.</p>
+   </div>
+ </div>
+
+ </div>
+
+
+ <a href="index.html" id="nextpagelink">
+   <div class="profile1">
+    <div id="nextpagelink-button">
+     < TRY AGAIN
+   </div>
+ </div></a>
+
+
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+ <!-- google search -->
+ <SCRIPT LANGUAGE="JavaScript">
+
+  (function() {
+    var cx = '006837408911383998375:mxjw-pde750';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  window.onload = setCookie;
+  function setCookie() {
+    var sweet = localStorage.getItem('flavor-sweet');
+    var sour = localStorage.getItem('flavor-sour');
+    var bitter = localStorage.getItem('flavor-bitter');
+    var salty = localStorage.getItem('flavor-salty');
+    var spicy = localStorage.getItem('flavor-spicy');
+    console.log(sweet);
+
+    document.getElementById('progress-bar-description1').innerHTML = "sweet " + sweet + "/10";
+    document.getElementById('progress-bar-description2').innerHTML = "sour " + sour + "/10";
+    document.getElementById('progress-bar-description3').innerHTML = "bitter " + bitter + "/10";
+    document.getElementById('progress-bar-description4').innerHTML = "salty " + salty + "/10";
+    document.getElementById('progress-bar-description5').innerHTML = "spicy " + spicy + "/10";
+
+    var element1 = document.getElementById('progress-bar-custom1')
+    element1.style.width = sweet +"0%";
+    var element2 = document.getElementById('progress-bar-custom2')
+    element2.style.width = sour +"0%";
+    var element3 = document.getElementById('progress-bar-custom3')
+    element3.style.width = bitter +"0%";
+    var element4 = document.getElementById('progress-bar-custom4')
+    element4.style.width = salty +"0%";
+    var element5 = document.getElementById('progress-bar-custom5')
+    element5.style.width = spicy +"0%";
+
+      // line of result
+      // document.getElementById('flavor-profile-page1').innerHTML= "sweet&nbsp" + "<p style='font-size:30px;display: inline;'> " +sweet+"</p>" + "/10 &nbsp &nbsp" + "sour&nbsp" + "<p style='font-size:30px;display: inline;'> "
+      // + sour + "</p>" +"/10 &nbsp &nbsp"+ "bitter&nbsp" + "<p style='font-size:30px;display: inline;'> "
+      // +bitter + "</p>" +"/10 &nbsp &nbsp"+"salty&nbsp"+ "<p style='font-size:30px;display: inline;'> "
+      // +salty + "</p>"+"/10 &nbsp &nbsp "+ "spicy&nbsp"+ "<p style='font-size:30px;display: inline;'> "
+      // +spicy + "</p>" +"/10";
+
+
+// sweet ingredients
+var sweet1 = ["honey", "maple syrup", "jam","caramel"];
+var sweet2 = ["banana", "date", "vanilla","pineapple","marshmallow","cider","sweet potato"];
+var sweet3 = ["pumpkin", "strawberry", "peach","cherry","ketchup","beet"];
+var sweet4 = ["coconut water", "carrot", "basil","corn"];
+var randSweet="?";
+if(sweet >= 7){
+ randSweet = sweet1[Math.floor(Math.random() * sweet1.length)];
+}
+if(sweet<7 && sweet>=5){
+  randSweet = sweet2[Math.floor(Math.random() * sweet2.length)];
+}
+if(sweet<5 && sweet>=3){
+  randSweet = sweet3[Math.floor(Math.random() * sweet3.length)];
+}
+if(sweet<3 && sweet>0){
+  randSweet = sweet4[Math.floor(Math.random() * sweet4.length)];
+}
+
+// sour ingredients
+var sour1 = ["lemon", "balsamic vinegar", "sauerkraut","yogurt"];
+var sour2 = ["sour cream", "berries", "sourdough","kimchi","red wine"];
+var sour3 = ["tomato", "sherry", "kombucha","rhubarb"];
+var sour4 = ["pita bread", "soba", "cucumber","leek"];
+var randSour ="?";
+if(sour >= 7){
+  randSour = sour1[Math.floor(Math.random() * sour1.length)];
+}
+if(sour<7 && sour>=5){
+  randSour = sour2[Math.floor(Math.random() * sour2.length)];
+}
+if(sour<5 && sour>=3){
+ randSour = sour3[Math.floor(Math.random() * sour3.length)];
+}
+if(sour<3 && sour>0){
+  randSour = sour4[Math.floor(Math.random() * sour4.length)];
+}
+
+
+
+// bitter ingredients
+var bitter1 = ["coffee", "cocoa", "whisky"];
+var bitter2 = ["grapefruit", "arugular", "beer","malt"];
+var bitter3 = ["broccoli", "kale", "romaine","sprouts","artichokes"];
+var bitter4 = ["saffron", "sesame", "wild rice","quinoa","asparagus"];
+var randBitter ="?";
+if(bitter >= 7){
+ randBitter = bitter1[Math.floor(Math.random() * bitter1.length)];
+  // var elem1;
+  // var elem2;
+  // var elemListLength = bitter1.length;
+
+  // elem1 = bitter1[Math.floor(Math.random() * elemListLength)];
+  // if (elemListLength > 1) {
+  //   do {
+  //     elem2 = bitter1[Math.floor(Math.random() * elemListLength)];
+  //   } while(elem1 == elem2);
+  // }
+  // randBitter = elem1 + ", " + elem2;
+}
+if(bitter<7 && bitter>=5){
+ randBitter = bitter2[Math.floor(Math.random() * bitter2.length)];
+}
+if(bitter<5 && bitter>=3){
+ randBitter = bitter3[Math.floor(Math.random() * bitter3.length)];
+}
+if(bitter<3 && bitter>0){
+  randBitter = bitter4[Math.floor(Math.random() * bitter4.length)];
+}
+
+// salty ingredients
+var salty1 = ["teriyaki", "miso", "bacon","pickle","tortilla chips"];
+var salty2 = ["anchovies", "goat cheese", "parmesan","pesto"];
+var salty3 = ["caper", "olive", "seaweed","hummus","avocado","tofu","chickpeas"];
+var salty4 = ["portobello", "potatoes", "boiled egg"]; 
+var randSalty ="?";
+if(salty >= 7){
+  randSalty = salty1[Math.floor(Math.random() * salty1.length)];
+}
+if(salty<7 && salty>=5){
+  randSalty = salty2[Math.floor(Math.random() * salty2.length)];
+}
+if(salty<5 && salty>=3){
+ randSalty = salty3[Math.floor(Math.random() * salty3.length)];
+}
+if(salty<3 && salty>0){
+  randSalty = salty4[Math.floor(Math.random() * salty4.length)];
+}
+
+
+// spicy ingredients
+var spicy1 = ["wasabi", "sriracha", "horseradish","halapenos","chili flakes"];
+var spicy2 = ["harissa", "black pepper", "curry","ginger","dijon mustard"];
+var spicy3 = ["onion", "caraway", "herb falafel","mulled wine"];
+var spicy4 = ["olive oil", "radishes", "tahini","cilantro"];  
+var randSpicy ="?";
+if(spicy >= 7){
+  randSpicy = spicy1[Math.floor(Math.random() * spicy1.length)];
+}
+if(spicy<7 && spicy>=5){
+  randSpicy = spicy2[Math.floor(Math.random() * spicy2.length)];
+}
+if(spicy<5 && spicy>=3){
+ randSpicy = spicy3[Math.floor(Math.random() * spicy3.length)];
+}
+if(spicy<3 && spicy>0){
+  randSpicy = spicy4[Math.floor(Math.random() * spicy4.length)];
+}
+
+
+// final ingredient results
+document.getElementById('page1-ingredient-list').innerHTML= randSweet + ", " + randSour + ", " + randBitter + ", " + randSalty + ", " + randSpicy;
+}
+
+// copy text function
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+</SCRIPT> 
+
+</body>
+</html>

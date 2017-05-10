@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>food.audio</title>
+  <link href="https://fonts.googleapis.com/css?family=Amiko" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+</head>
+<body>
+
+  <div class="header">
+  <!--    <a href=#> <p class="header-name">food.audio</p></a>
+   <p class="header-blurb0">Transcode music into food</p> -->
+   <a href=#> <img src="data/logo.png"  width="260px;"></a>
+ </div>
+
+
+
+
+ <div class="menu">
+    <p class="header-blurb">What's your current musical taste?</p>
+ <p class="header-date0">Weekly Audio Menu</p>
+  <p class="header-date">May 15 ~ 21 , 2017</p>
+ <!--  <p class="header-date-detail">The menu changes weekly, dudes.</p> -->
+
+
+
+  <form action="" id="flavorform" onsubmit="return false;">
+    <!-- piece1: Les Nuits D'une Demoiselle  -->
+    <div class="box" id="box1" onmouseover="PlaySound1();" >
+    <img src="data/les-nuits.jpg" >
+    <div  id="button-play1"><img src="data/button-play.png"></div>
+    <div id="flavor-profile1" >
+      <span class="flavor-text-position">sweet<p style='font-size:24px;display: inline;'> 9</p> / 10<br>sour<p style='font-size:24px;display: inline;'> 6</p> / 10 <br> bitter<p style='font-size:24px;display: inline;'> 3</p> / 10 <br> salty<p style='font-size:24px;display: inline;'> 8</p> / 10 <br> spicy<p style='font-size:24px;display: inline;'> 2</p> / 10</span>
+    </div>
+
+    <p>
+      <label for='includemusic1'>
+        Les Nuits D'une Demoiselle <br> <i>Colette Renard</i></label>
+        <input type="checkbox" id="includemusic1"  name="music" onclick="calculateTotal()" />
+        <label for="includemusic1"><span id="imageplus1"></span></label>
+      </p>
+      <audio id="player1">
+        <source src="data/les-nuits.m4a">
+        </audio>
+      </div>
+
+
+
+
+      <!-- piece2:  7 years in Tibet -->
+      <div class="box" id="box2" onmouseover="PlaySound2();">
+      <img src="data/7years-in-Tibet.jpg" >
+      <div  id="button-play2"><img src="data/button-play.png" ></div>
+      <div id="flavor-profile2" >
+       <span class="flavor-text-position">sweet<p style='font-size:24px;display: inline;'> 7</p> / 10<br>sour<p style='font-size:24px;display: inline;'> 3</p> / 10 <br> bitter<p style='font-size:24px;display: inline;'> 9</p> / 10 <br> salty<p style='font-size:24px;display: inline;'> 3</p> / 10 <br> spicy<p style='font-size:24px;display: inline;'> 2</p> / 10</span>
+     </div>
+     <p>
+      <label for='includemusic2'>
+        7 years in Tibet<br> <i>John Williams, Yo-Yo Ma</i></label>
+        <input type="checkbox" id="includemusic2" name="music"  onclick="calculateTotal()" />
+        <label for="includemusic2"><span id="imageplus2"></span></label>
+      </p>
+      <audio id="player2"> 
+        <source src="data/7years-in-Tibet.m4a" />
+      </audio>
+    </div>
+
+
+    <!-- piece3: Hoping -->
+    <div class="box" id="box3" onmouseover="PlaySound3();">
+      <img src="data/hoping.jpg" >
+     <div  id="button-play3"> <img src="data/button-play.png"></div>
+      <div id="flavor-profile3" >
+        <span class="flavor-text-position">sweet<p style='font-size:24px;display: inline;'> 6</p> / 10<br>sour<p style='font-size:24px;display: inline;'> 9</p> / 10 <br> bitter<p style='font-size:24px;display: inline;'> 2</p> / 10 <br> salty<p style='font-size:24px;display: inline;'> 8</p> / 10 <br> spicy<p style='font-size:24px;display: inline;'> 6</p> / 10</span>
+      </div>
+      <p>
+        <label for='includemusic3'>
+         Hoping<br> <i>Louie Austen</i></label>
+         <input type="checkbox" id="includemusic3" name="music"  onclick="calculateTotal()" />
+         <label for="includemusic3"><span id="imageplus3"></span></label>
+       </p>
+       <audio id="player3"> 
+        <source src="data/Hoping.m4a" />
+      </audio>
+    </div>
+
+
+    <!--piece4: Little Lou, Prophet Jack, Ugly John -->
+    <div class="box" id="box4" onmouseover="PlaySound4();">
+      <img src="data/LittleLou.jpg" >
+     <div  id="button-play4"><img src="data/button-play.png"></div>
+      <div id="flavor-profile4" >
+        <span class="flavor-text-position">sweet<p style='font-size:24px;display: inline;'> 5</p> / 10<br>sour<p style='font-size:24px;display: inline;'> 2</p> / 10 <br> bitter<p style='font-size:24px;display: inline;'> 4</p> / 10 <br> salty<p style='font-size:24px;display: inline;'> 4</p> / 10 <br> spicy<p style='font-size:24px;display: inline;'> 3</p> / 10</span>
+      </div>
+      <p>
+        <label for='includemusic4'>
+         Little Lou, Prophet Jack<br> <i>Belle & Sebastian</i></label>
+         <input type="checkbox" id="includemusic4" name="music"  onclick="calculateTotal()" />
+         <label for="includemusic4"><span id="imageplus4"></span></label>
+       </p>
+       <audio id="player4"> 
+        <source src="data/LittleLou.m4a" />
+      </audio>
+    </div>
+
+
+    <!-- piece5: 10 Years Gone-->
+    <div class="box" id="box5" onmouseover="PlaySound5();">
+      <img src="data/10yearsgone.jpg" >
+     <div  id="button-play5"> <img src="data/button-play.png"></div>
+      <div id="flavor-profile5" >
+        <span class="flavor-text-position">sweet<p style='font-size:24px;display: inline;'> 3</p> / 10<br>sour<p style='font-size:24px;display: inline;'> 2</p> / 10 <br> bitter<p style='font-size:24px;display: inline;'> 7</p> / 10 <br> salty<p style='font-size:24px;display: inline;'> 6</p> / 10 <br> spicy<p style='font-size:24px;display: inline;'> 3</p> / 10</span>
+      </div>
+      <p>
+        <label for='includemusic5'>
+         10 Years Gone<br> <i>Led Zeppelin</i></label>
+         <input type="checkbox" id="includemusic5" name="music"  onclick="calculateTotal()" />
+         <label for="includemusic5"><span id="imageplus5"></span></label>
+       </p>
+       <audio id="player5"> 
+        <source src="data/10yearsgone.m4a" />
+      </audio>
+    </div>
+
+    <!-- piece6: Pisco -->
+    <div class="box" id="box6"onmouseover="PlaySound6();">
+      <img src="data/IsoleePisco.jpg" >
+      <div  id="button-play6"><img src="data/button-play.png" onclick="play6()"></div>
+      <div id="flavor-profile6" onclick="play66()">
+        <span class="flavor-text-position">sweet<p style='font-size:24px;display: inline;'> 8</p> / 10<br>sour<p style='font-size:24px;display: inline;'> 8</p> / 10 <br> bitter<p style='font-size:24px;display: inline;'> 1</p> / 10 <br> salty<p style='font-size:24px;display: inline;'> 6</p> / 10 <br> spicy<p style='font-size:24px;display: inline;'> 8</p> / 10</span>
+      </div>
+      <p>
+        <label for='includemusic6'>
+         Pisco<br> <i>Isolee</i></label>
+         <input type="checkbox" id="includemusic6" name="music"  onclick="calculateTotal()" />
+         <label for="includemusic6"><span id="imageplus6"></span></label>
+       </p>
+       <audio id="player6"> 
+        <source src="data/IsoleePisco.m4a" />
+      </audio>
+    </div>
+
+  <!-- piece7: Frédéric Chopin - Prelude in E-Minor (op.28 no. 4) -->
+    <div class="box" id="box7" onmouseover="PlaySound7();">
+      <img src="data/Chopin.jpg" >
+      <div  id="button-play7"><img src="data/button-play.png" onclick="play7()"></div>
+      <div id="flavor-profile7" onclick="play77()">
+        <span class="flavor-text-position">sweet<p style='font-size:24px;display: inline;'> 4</p> / 10<br>sour<p style='font-size:24px;display: inline;'> 7</p> / 10 <br> bitter<p style='font-size:24px;display: inline;'> 8</p> / 10 <br> salty<p style='font-size:24px;display: inline;'> 3</p> / 10 <br> spicy<p style='font-size:24px;display: inline;'> 1</p> / 10</span>
+      </div>
+      <p>
+        <label for='includemusic7'>
+         Prelude in E-Minor<br> <i>Frédéric Chopin</i></label>
+         <input type="checkbox" id="includemusic7" name="music"  onclick="calculateTotal()" />
+         <label for="includemusic7"><span id="imageplus7"></span></label>
+       </p>
+       <audio id="player7"> 
+        <source src="data/Chopin.m4a" />
+      </audio>
+    </div>
+
+
+<!--piece8: Blood Orange - You're Not Good Enough -->
+<div class="box" id="box8" onmouseover="PlaySound8();">
+      <img src="data/youre_not_good_enough.jpg" >
+      <div  id="button-play8"><img src="data/button-play.png" onclick="play8()"></div>
+      <div id="flavor-profile8" onclick="play88()">
+        <span class="flavor-text-position">sweet<p style='font-size:24px;display: inline;'> 5</p> / 10<br>sour<p style='font-size:24px;display: inline;'> 4</p> / 10 <br> bitter<p style='font-size:24px;display: inline;'> 3</p> / 10 <br> salty<p style='font-size:24px;display: inline;'> 5</p> / 10 <br> spicy<p style='font-size:24px;display: inline;'> 4</p> / 10</span>
+      </div>
+      <p>
+        <label for='includemusic8'>
+         You're Not Good Enough<br> <i>Blood Orange</i></label>
+         <input type="checkbox" id="includemusic8" name="music"  onclick="calculateTotal()" />
+         <label for="includemusic8"><span id="imageplus8"></span></label>
+       </p>
+       <audio id="player8"> 
+        <source src="data/youre_not_good_enough.m4a" />
+      </audio>
+    </div>
+
+<!--piece9: Omar Souleyman - Wenu Wenu -->
+<div class="box" id="box9" onmouseover="PlaySound9();">
+      <img src="data/WenuWenu.jpg" >
+      <div  id="button-play9"><img src="data/button-play.png" onclick="play9()"></div>
+      <div id="flavor-profile9" onclick="play99()">
+        <span class="flavor-text-position">sweet<p style='font-size:24px;display: inline;'> 7</p> / 10<br>sour<p style='font-size:24px;display: inline;'> 3</p> / 10 <br> bitter<p style='font-size:24px;display: inline;'> 2</p> / 10 <br> salty<p style='font-size:24px;display: inline;'> 9</p> / 10 <br> spicy<p style='font-size:24px;display: inline;'> 8</p> / 10</span>
+      </div>
+      <p>
+        <label for='includemusic9'>
+         Wenu Wenu<br> <i>Omar Souleyman</i></label>
+         <input type="checkbox" id="includemusic9" name="music"  onclick="calculateTotal()" />
+         <label for="includemusic9"><span id="imageplus9"></span></label>
+       </p>
+       <audio id="player9"> 
+        <source src="data/WenuWenu.m4a" />
+      </audio>
+    </div>
+
+<!--piece10: Dennis Brown - Money in my pocket -->
+<div class="box" id="box10" onmouseover="PlaySound10();">
+      <img src="data/Money-in-my-pocket.jpg" >
+      <div  id="button-play10"><img src="data/button-play.png" onclick="play10()"></div>
+      <div id="flavor-profile10" onclick="play1010()">
+        <span class="flavor-text-position">sweet<p style='font-size:24px;display: inline;'> 9</p> / 10<br>sour<p style='font-size:24px;display: inline;'> 5</p> / 10 <br> bitter<p style='font-size:24px;display: inline;'> 2</p> / 10 <br> salty<p style='font-size:24px;display: inline;'> 7</p> / 10 <br> spicy<p style='font-size:24px;display: inline;'> 3</p> / 10</span>
+      </div>
+      <p>
+        <label for='includemusic10'>
+         Money in my pocket<br> <i>Dennis Brown</i></label>
+         <input type="checkbox" id="includemusic10" name="music"  onclick="calculateTotal()" />
+         <label for="includemusic10"><span id="imageplus10"></span></label>
+       </p>
+       <audio id="player10"> 
+        <source src="data/Money-in-my-pocket.m4a" />
+      </audio>
+    </div>
+
+<!--piece11: Björk - Human Behavior -->
+<div class="box" id="box11" onmouseover="PlaySound11();">
+      <img src="data/HumanBehavior.jpg" >
+      <div  id="button-play11"><img src="data/button-play.png" onclick="play11()"></div>
+      <div id="flavor-profile11" onclick="play1111()">
+        <span class="flavor-text-position">sweet<p style='font-size:24px;display: inline;'> 1</p> / 10<br>sour<p style='font-size:24px;display: inline;'> 6</p> / 10 <br> bitter<p style='font-size:24px;display: inline;'> 6</p> / 10 <br> salty<p style='font-size:24px;display: inline;'> 5</p> / 10 <br> spicy<p style='font-size:24px;display: inline;'> 5</p> / 10</span>
+      </div>
+      <p>
+        <label for='includemusic11'>
+         Human Behavior<br> <i>Björk</i></label>
+         <input type="checkbox" id="includemusic11" name="music"  onclick="calculateTotal()" />
+         <label for="includemusic11"><span id="imageplus11"></span></label>
+       </p>
+       <audio id="player11"> 
+        <source src="data/HumanBehavior.m4a" />
+      </audio>
+    </div>
+
+<!--piece12: Scott Hamilton - Min Soldat -->
+<div class="box" id="box12" onmouseover="PlaySound12();">
+      <img src="data/MinSoldat.jpg" >
+      <div  id="button-play12"><img src="data/button-play.png" onclick="play12()"></div>
+      <div id="flavor-profile12" onclick="play1212()">
+        <span class="flavor-text-position">sweet<p style='font-size:24px;display: inline;'> 8</p> / 10<br>sour<p style='font-size:24px;display: inline;'> 2</p> / 10 <br> bitter<p style='font-size:24px;display: inline;'> 5</p> / 10 <br> salty<p style='font-size:24px;display: inline;'> 4</p> / 10 <br> spicy<p style='font-size:24px;display: inline;'> 1</p> / 10</span>
+      </div>
+      <p>
+        <label for='includemusic12'>
+         Min Soldat<br> <i>Scott Hamilton</i></label>
+         <input type="checkbox" id="includemusic12" name="music"  onclick="calculateTotal()" />
+         <label for="includemusic12"><span id="imageplus12"></span></label>
+       </p>
+       <audio id="player12"> 
+        <source src="data/MinSoldat.m4a" />
+      </audio>
+    </div>
+
+  </form>
+  <div class="scroll-space1"></div>
+
+
+</div>
+
+
+
+
+
+
+<div class="ingredients">
+
+ <div id="ingredients-title">Selected Audio</div>
+ <div id="description"><img src="data/empty.png"><p> Start listening ▶ and select + your appetizing song(s)!</p></div>
+ <!-- selected music list -->
+ <div id="ingredientList" onclick="cancle1()" onclick="calculateTotal()">
+  <div id="ingredient1" ></div>
+  <img src="data/cancle.png" id="button-cancle"></div>
+
+  <div id="ingredientList" onclick="cancle2()" onclick="calculateTotal()">
+    <div id="ingredient2"></div>
+    <img src="data/cancle.png" id="button-cancle"></div>
+
+    <div id="ingredientList" onclick="cancle3()" onclick="calculateTotal()">
+      <div id="ingredient3"></div>
+      <img src="data/cancle.png" id="button-cancle"></div>
+
+      <div id="ingredientList" onclick="cancle4()" onclick="calculateTotal()">
+        <div id="ingredient4"></div>
+        <img src="data/cancle.png" id="button-cancle"></div>
+
+
+        <div id="ingredientList" onclick="cancle5()" onclick="calculateTotal()">
+          <div id="ingredient5"></div>
+          <img src="data/cancle.png" id="button-cancle"></div>
+
+          <div id="ingredientList" onclick="cancle6()" onclick="calculateTotal()">
+            <div id="ingredient6"></div>
+            <img src="data/cancle.png" id="button-cancle"></div>
+
+            <div id="ingredientList" onclick="cancle7()" onclick="calculateTotal()">
+            <div id="ingredient7"></div>
+            <img src="data/cancle.png" id="button-cancle"></div>
+
+            <div id="ingredientList" onclick="cancle8()" onclick="calculateTotal()">
+            <div id="ingredient8"></div>
+            <img src="data/cancle.png" id="button-cancle"></div>
+
+            <div id="ingredientList" onclick="cancle9()" onclick="calculateTotal()">
+            <div id="ingredient9"></div>
+            <img src="data/cancle.png" id="button-cancle"></div>
+
+            <div id="ingredientList" onclick="cancle10()" onclick="calculateTotal()">
+            <div id="ingredient10"></div>
+            <img src="data/cancle.png" id="button-cancle"></div>
+
+            <div id="ingredientList" onclick="cancle11()" onclick="calculateTotal()">
+            <div id="ingredient11"></div>
+            <img src="data/cancle.png" id="button-cancle"></div>
+
+            <div id="ingredientList" onclick="cancle12()" onclick="calculateTotal()">
+            <div id="ingredient12"></div>
+            <img src="data/cancle.png" id="button-cancle"></div>
+
+          </div >
+
+          <!-- bottom bar -->
+          <a href="result.html" id="nextpagelink" Value="Set to Cookie" onclick="setCookie()">
+            <div class="profile">
+              <div id="nextpagelink-button">
+                TRANSCODE >
+              </div>
+            </div></a>
+
+
+
+
+
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+            <script type="text/javascript" src="sound-mouseover.js"></script>
+            <script type="text/javascript" src="javascript.js"></script>
+          </body>
+          </html>
